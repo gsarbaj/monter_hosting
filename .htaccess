@@ -1,0 +1,7 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^monter\.by$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.monter\.by$
+RewriteRule ^/?$ "https\:\/\/monter\.by\/" [R=301,L]
